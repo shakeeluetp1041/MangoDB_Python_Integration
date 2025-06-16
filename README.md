@@ -1,6 +1,6 @@
 # MongoDB Atlas + Custom Logger Tutorial (Python)
 
-## 📌 Purpose
+##  Purpose
 
 In real-world machine learning and data science projects, your training data will often reside on remote databases instead of your local machine. It's crucial to understand how to connect to these databases and retrieve data effectively. Additionally, as project structures become more complex (which they usually do), a proper logging system is essential to track program activities and quickly identify and debug issues.
 
@@ -30,7 +30,7 @@ Inside your project:
   - **Cluster Name:** Use default `Cluster0` or rename it
 - Click **"Create Cluster"**
 
-> ⚠️ *Note: Cluster setup may take a few minutes to finish.*
+>  *Note: Cluster setup may take a few minutes to finish.*
 
 ## 🔹 4. Create a Database User
 - Navigate to **"Database Access"**
@@ -51,12 +51,11 @@ Inside your project:
 - Select **Python** and your version
 - Copy the connection string. 
   Example:
+  mongodb+srv://shakeeluetp:<password>@cluster0.xxxxx.mongodb.net/
+  
 
-  ```  mongodb+srv://shakeeluetp:<password>@cluster0.xxxxx.mongodb.net/
-  ```
 
-
-## 🔧 Logger Setup
+##  Logger Setup
 
 The logging functionality is implemented in the `logger.py` file.
 
@@ -67,54 +66,52 @@ The logging functionality is implemented in the `logger.py` file.
 
 ### 🔹 Usage:
 
-```python
+- python
 from logger import setup_logger
-
 logger = setup_logger(__name__, level='INFO')
 logger.info("This is an info message.")
 logger.warning("This is a warning message.")
-```
+
 ### 🔹 The setup_logger function:
 - Accepts the module name and desired log level.
 - Configures a logger with formatting and file handlers.
 - Saves logs as logs/module_name.log.
 
 
-### 🧾 File Descriptions
+###  File Descriptions
 
 - **`logs/`**: Automatically created. Contains `.log` files per module to trace activities and errors.
 - **`src/logger.py`**: Defines the `setup_logger()` function to generate and manage logs.
 - **`src/mongo_connection.py`**: Contains logic to:
-- **`src/main.py`**: The entry script, with the sole instruction:
-  ```python
-  import mongo_connection
   - Establish a MongoDB Atlas connection.
   - Upload data from `train.csv` to the database.
   - Retrieve data back for use.
+- **`src/main.py`**: The entry script, with the sole instruction:
+  - import mongo_connection
 - **`train.csv`**: A sample CSV file that will be sent to and retrieved from MongoDB.
 - **`requirements.txt`**: Lists Python packages to install via `pip install -r requirements.txt`.
  **`.gitignore`**: Specifies files and directories that Git should ignore and not include in version control
 - **`README.md`**: This file — contains setup steps, project structure, and instructions.
 
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
-### 1. Clone the repository (if applicable)
+### 1. Clone the repository
 ```bash
 git clone <repository-url>
 cd MangoDB_Python_Integration
 ```
-### 2. Create and activate a virtual environment (recommended)
-# On Windows
-python -m venv venv
-venv\Scripts\activate
+### 2. Create and activate a virtual environment 
+-  On Windows
+   - python -m venv venv
+   - venv\Scripts\activate
 
-# On macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
+- On macOS/Linux
+  - python3 -m venv venv
+  - source venv/bin/activate
 
 ### 3. Install dependencies
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 ### 4. Run the application
-python src/main.py
+- python src/main.py
