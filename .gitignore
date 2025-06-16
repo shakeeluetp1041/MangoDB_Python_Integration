@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Logs
+logs/
+*.log
+
+# Python environment files
+*.env
+*.venv
+*.env.*
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VS Code settings
+.vscode/
+
+# macOS system files
+.DS_Store
+
+# Python egg files
+*.egg
+*.egg-info/
+dist/
+build/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# SQLite files (if any)
+*.sqlite3
+
+# Database dumps
+*.dump
+
+# Ignore train.csv if you don't want to track data files
+# Comment this out if you want to keep train.csv in version control
+# train.csv
