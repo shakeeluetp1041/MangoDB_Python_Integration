@@ -6,7 +6,7 @@ import os
 from pymongo import MongoClient
 
 # Replace <username>, <password>, and add your database name
-uri = "mongodb+srv://shakeeluetp1041:password@cluster0.3hmm.mongodb.net/"
+uri = "mongodb+srv://username:password@cluster0.3hmm.mongodb.net/"
 
 client = MongoClient(uri)
 logger.info('mongodb atles connection setup completed.')
